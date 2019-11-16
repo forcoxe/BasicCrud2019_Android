@@ -9,6 +9,19 @@ public class Serie {
     public Serie() {
     }
 
+    public Serie(int id, String nombre, String categoria, int capitulos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.categoria = categoria;
+        this.capitulos = capitulos;
+    }
+
+    public Serie(String nombre, String categoria, int capitulos) {
+        this.nombre = nombre;
+        this.categoria = categoria;
+        this.capitulos = capitulos;
+    }
+
     public int getId() {
         return id;
     }
