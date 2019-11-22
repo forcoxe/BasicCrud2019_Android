@@ -14,6 +14,8 @@ public class SerieDAL {
     public SerieDAL(Context context) {
         this.dbHelper = new DatabaseHelper(context);
         this.serie = new Serie();
+        // Testing
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
     }
 
     public SerieDAL(Context context, Serie serie) {
