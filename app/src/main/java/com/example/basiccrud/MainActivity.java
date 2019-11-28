@@ -3,7 +3,9 @@ package com.example.basiccrud;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.basiccrud.dal.SerieDAL;
 import com.example.basiccrud.dto.Serie;
@@ -17,6 +19,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         this.serieDAL = new SerieDAL(getApplicationContext(), new Serie());
+
+        Button boton = findViewById(R.id.bt2);
+        final EditText text1 = findViewById(R.id.txt1);
+        final EditText text2 = findViewById(R.id.txt2);
+        final EditText text3 = findViewById(R.id.txt4);
+
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                serieDAL.insertar(
+                        text1.getText().toString(),
+                        text2.getText().toString(),
+                        Integer.parseInt(text3.getText().toString())
+                );
+            }
+        });
 
         // Testing (No lo hagan en casa)
 /*
